@@ -162,10 +162,10 @@ private struct RemodexDisplayIslandLockScreenView: View {
     let state: RemodexDisplayIslandAttributes.ContentState
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 12) {
-            HStack(spacing: 10) {
+        VStack(alignment: .leading, spacing: 14) {
+            HStack(spacing: 12) {
                 RemodexDisplayIslandMark()
-                    .frame(width: 28, height: 28)
+                    .frame(width: 32, height: 32)
 
                 VStack(alignment: .leading, spacing: 2) {
                     Text("Remodex")
@@ -180,7 +180,8 @@ private struct RemodexDisplayIslandLockScreenView: View {
 
             RemodexDisplayIslandExpandedList(state: state)
         }
-        .padding(.vertical, 4)
+        .padding(.horizontal, 16)
+        .padding(.vertical, 12)
     }
 
     private var headerSubtitle: String {
@@ -250,6 +251,7 @@ private struct RemodexDisplayIslandRow: View {
             Text(conversation.state)
                 .font(.caption2.weight(.medium))
                 .foregroundStyle(tint)
+                .frame(minWidth: 58, alignment: .trailing)
         }
     }
 

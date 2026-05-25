@@ -88,6 +88,7 @@ struct ContentView: View {
     @State private var displayIslandCompletedBanners: [CodexThreadCompletionBanner] = []
     @State private var displayIslandFailedBanners: [CodexThreadCompletionBanner] = []
     @State private var displayIslandLastRunningThreadIDs: Set<String> = []
+    @State private var displayIslandLastTerminalStatesByThread: [String: CodexTurnTerminalState] = [:]
     @AppStorage("codex.hasSeenOnboarding") private var hasSeenOnboarding = false
     @AppStorage("codex.whatsNew.lastPresentedVersion") private var lastPresentedWhatsNewVersion = ""
 
@@ -1966,6 +1967,7 @@ struct ContentView: View {
     private func clearDisplayIslandOutcome(for threadId: String) {
         displayIslandCompletedBanners.removeAll { $0.threadId == threadId }
         displayIslandFailedBanners.removeAll { $0.threadId == threadId }
+        displayIslandLastTerminalStatesByThread[threadId] = codex.latestTurnTerminalState(for: threadId)
     }
 
     private func syncDisplayIsland() {
@@ -1979,6 +1981,7 @@ struct ContentView: View {
     private func reconcileDisplayIslandCompletions() {
         let currentRunningIDs = displayIslandCurrentRunningThreadIDs()
         let completedIDs = displayIslandLastRunningThreadIDs.subtracting(currentRunningIDs)
+        let terminalStates = codex.latestTurnTerminalStateByThread
 
         displayIslandCompletedBanners.removeAll { banner in
             currentRunningIDs.contains(banner.threadId)
@@ -2003,7 +2006,25 @@ struct ContentView: View {
             rememberDisplayIslandCompletion(threadId: threadId)
         }
 
+        for (threadId, terminalState) in terminalStates where !currentRunningIDs.contains(threadId) {
+            guard displayIslandLastTerminalStatesByThread[threadId] != terminalState else {
+                continue
+            }
+
+            switch terminalState {
+            case .completed:
+                rememberDisplayIslandCompletion(threadId: threadId)
+            case .failed:
+                rememberDisplayIslandFailure(threadId: threadId)
+            case .stopped:
+                clearDisplayIslandOutcome(for: threadId)
+            }
+        }
+
         displayIslandLastRunningThreadIDs = currentRunningIDs
+        displayIslandLastTerminalStatesByThread = terminalStates.filter { threadId, _ in
+            !currentRunningIDs.contains(threadId)
+        }
     }
 
     private func displayIslandSnapshot() -> RemodexDisplayIslandSnapshot {
