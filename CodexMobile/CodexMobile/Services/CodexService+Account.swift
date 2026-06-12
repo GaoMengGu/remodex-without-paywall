@@ -853,14 +853,14 @@ extension CodexService {
         if let currentVersion = currentVersion?.trimmingCharacters(in: .whitespacesAndNewlines),
            !currentVersion.isEmpty {
             message =
-                "This device bridge is running Remodex \(currentVersion), but this iPhone app requires Remodex \(CodexService.minimumSupportedBridgePackageVersion) or newer. Update the npm package on your device, then reconnect."
+                "This device bridge is running Codex Anywhere \(currentVersion), but this iPhone app requires Codex Anywhere \(CodexService.minimumSupportedBridgePackageVersion) or newer. Update the npm package on your device, then reconnect."
         } else {
             message =
-                "This device bridge is too old for this version of Remodex iPhone. Update the Remodex npm package on your device to \(CodexService.minimumSupportedBridgePackageVersion) or newer, then reconnect."
+                "This device bridge is too old for this version of Codex Anywhere iPhone. Update the Codex Anywhere npm package on your device to \(CodexService.minimumSupportedBridgePackageVersion) or newer, then reconnect."
         }
 
         return CodexBridgeUpdatePrompt(
-            title: "Update Remodex on your device to reconnect",
+            title: "Update Codex Anywhere on your device to reconnect",
             message: message,
             command: minimumBridgePackageUpdateCommand
         )
@@ -921,16 +921,16 @@ extension CodexService {
         latestVersion: String
     ) -> CodexBridgeUpdatePrompt {
         CodexBridgeUpdatePrompt(
-            title: "A newer Remodex update is available on your device",
-            message: "This device bridge is running Remodex \(currentVersion), and npm now has Remodex \(latestVersion). Update the package on your device when you're ready, then reconnect to start using the newer build.",
+            title: "A newer Codex Anywhere update is available on your device",
+            message: "This device bridge is running Codex Anywhere \(currentVersion), and npm now has Codex Anywhere \(latestVersion). Update the package on your device when you're ready, then reconnect to start using the newer build.",
             command: minimumBridgePackageUpdateCommand
         )
     }
 
     private func forcedBridgePackageUpdatePrompt(currentVersion: String) -> CodexBridgeUpdatePrompt {
         CodexBridgeUpdatePrompt(
-            title: "Update Remodex on your device to reconnect",
-            message: "This device bridge is running Remodex \(currentVersion). Update the Remodex CLI on your device to \(forcedBridgeUpgradeTargetVersion), then reconnect.",
+            title: "Update Codex Anywhere on your device to reconnect",
+            message: "This device bridge is running Codex Anywhere \(currentVersion). Update the Codex Anywhere CLI on your device to \(forcedBridgeUpgradeTargetVersion), then reconnect.",
             command: forcedBridgeUpgradeCommand
         )
     }

@@ -395,7 +395,7 @@ private enum AppIconChoice: String, CaseIterable, Identifiable {
     var subtitle: String {
         switch self {
         case .classic:
-            "Remodex 2"
+            "Codex Anywhere"
         case .contrast:
             "Dark in light mode, white in dark mode"
         }
@@ -518,7 +518,7 @@ private struct SettingsNotificationsCard: View {
     var body: some View {
         SettingsCard(
             title: "Notifications",
-            footer: "Alerts you when a run finishes while Remodex is in the background."
+            footer: "Alerts you when a run finishes while Codex Anywhere is in the background."
         ) {
             SettingsValueRow(title: "Permission", value: statusLabel)
 
@@ -678,7 +678,7 @@ private struct SettingsBridgeVersionCard: View {
         }
 
         if installedVersion.compare(latestVersion, options: .numeric) == .orderedAscending {
-            return "A newer Remodex package is available."
+            return "A newer Codex Anywhere package is available."
         }
 
         return "This device is running a different build than npm latest."

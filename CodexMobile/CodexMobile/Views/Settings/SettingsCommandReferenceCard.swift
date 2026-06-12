@@ -1,5 +1,5 @@
 // FILE: SettingsCommandReferenceCard.swift
-// Purpose: Sheet with local Remodex CLI commands for pairing and bridge management.
+// Purpose: Sheet with local Codex Anywhere CLI commands for pairing and bridge management.
 // Layer: Settings UI component
 // Exports: SettingsCommandReferenceSheet
 // Depends on: SwiftUI, UIKit, SettingsBaseComponents
@@ -39,7 +39,7 @@ private struct SettingsCommandReference: Identifiable {
         ),
         SettingsCommandReference(
             command: "remodex resume",
-            detail: "Reopens the last active Remodex thread in Codex."
+            detail: "Reopens the last active Codex Anywhere thread in Codex."
         ),
         SettingsCommandReference(
             command: "remodex watch [threadId]",
@@ -47,7 +47,7 @@ private struct SettingsCommandReference: Identifiable {
         ),
         SettingsCommandReference(
             command: "remodex --version",
-            detail: "Prints the installed Remodex CLI version."
+            detail: "Prints the installed Codex Anywhere CLI version."
         )
     ]
 
@@ -66,7 +66,7 @@ struct SettingsCommandReferenceSheet: View {
         NavigationStack {
             List {
                 Section {
-                    Text("Run these in Terminal on your paired Mac when you need to start, repair, or inspect the local Remodex bridge.")
+                    Text("Run these in Terminal on your paired Mac when you need to start, repair, or inspect the local Codex Anywhere bridge.")
                         .font(AppFont.footnote())
                         .foregroundStyle(.secondary)
                 }

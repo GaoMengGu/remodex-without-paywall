@@ -18,7 +18,7 @@ struct TerminalRunningIndicator: View {
 
     var body: some View {
         ShimmerText(
-            text: "Remodex is thinking",
+            text: "Codex Anywhere is thinking",
             font: AppFont.body(),
             foregroundStyle: .secondary
         )
@@ -28,7 +28,7 @@ struct TerminalRunningIndicator: View {
             ),
             alignment: .leading
         )
-        .accessibilityLabel("Remodex is thinking")
+        .accessibilityLabel("Codex Anywhere is thinking")
     }
 }
 

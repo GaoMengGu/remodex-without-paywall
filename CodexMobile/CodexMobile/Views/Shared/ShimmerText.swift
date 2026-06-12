@@ -77,7 +77,7 @@ struct ShimmerText: View, Equatable {
 #Preview("Shimmer Text") {
     VStack(alignment: .leading, spacing: 24) {
         ShimmerText(
-            text: "Remodex is thinking",
+            text: "Codex Anywhere is thinking",
             font: AppFont.body(),
             foregroundStyle: .secondary
         )

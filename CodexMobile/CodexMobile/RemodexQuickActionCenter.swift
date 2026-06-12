@@ -16,8 +16,8 @@ enum RemodexQuickAction: Equatable, Sendable {
 enum RemodexQuickActionCenter {
     static let didReceiveQuickAction = Notification.Name("remodex.didReceiveQuickAction")
 
-    private static let newChatType = "com.emanueledipietro.Remodex.quickAction.newChat"
-    private static let threadType = "com.emanueledipietro.Remodex.quickAction.thread"
+    private static let newChatType = "com.hamkris.CodexAnywhere.quickAction.newChat"
+    private static let threadType = "com.hamkris.CodexAnywhere.quickAction.thread"
     private static let threadIDUserInfoKey = "threadId"
     private static var pendingAction: RemodexQuickAction?
 

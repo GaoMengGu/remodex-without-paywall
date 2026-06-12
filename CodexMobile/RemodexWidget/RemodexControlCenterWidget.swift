@@ -11,17 +11,17 @@ import WidgetKit
 
 @available(iOS 18.0, *)
 struct RemodexLaunchControl: ControlWidget {
-    static let kind = "com.emanueledipietro.Remodex.RemodexWidget.LaunchControl.v9"
+    static let kind = "com.hamkris.CodexAnywhere.Widget.LaunchControl.v9"
 
     var body: some ControlWidgetConfiguration {
         StaticControlConfiguration(kind: Self.kind) {
             ControlWidgetButton(action: RemodexLaunchIntent()) {
                 // Control Center only accepts symbol images, so this routes
                 // through the control-sized Remodex symbolset.
-                Label("Remodex", image: "remodex_control_symbol")
+                Label("Codex Anywhere", image: "remodex_control_symbol")
             }
         }
-        .displayName("Remodex")
-        .description("Launch Remodex from Control Center.")
+        .displayName("Codex Anywhere")
+        .description("Launch Codex Anywhere from Control Center.")
     }
 }

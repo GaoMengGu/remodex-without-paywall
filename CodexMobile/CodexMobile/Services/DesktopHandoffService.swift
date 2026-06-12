@@ -227,13 +227,13 @@ private extension DesktopHandoffError {
         case "saved_pair_required":
             return fallback ?? "Reconnect to your paired device or scan a new QR code first."
         case "unsupported_bridge_preferences":
-            return fallback ?? "Update the Remodex bridge on your device to sync this setting."
+            return fallback ?? "Update the Codex Anywhere bridge on your device to sync this setting."
         case "invalid_bridge_preferences":
             return fallback ?? "The device bridge rejected this setting update."
         case "bridge_preferences_persist_failed":
             return fallback ?? "The device bridge could not save this setting."
         case "unsupported_bridge_update":
-            return fallback ?? "Update the Remodex bridge on your device before updating it from iPhone."
+            return fallback ?? "Update the Codex Anywhere bridge on your device before updating it from iPhone."
         case "bridge_update_failed":
             return fallback ?? "The device bridge could not update itself."
         default:

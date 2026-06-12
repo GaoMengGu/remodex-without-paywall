@@ -14,7 +14,7 @@ private let whatsNewItems: [String] = [
     "Pair with code when QR scanning is not convenient",
     "More reliable QR pairing, trusted reconnect, saved-device recovery, and connection switching",
     "Multiple Mac and multiple device support with better device management",
-    "Remodex CLI 2.0 support, bridge compatibility checks, legacy 1.5.1 path, and better bridge/menu bar status",
+    "Codex Anywhere CLI 2.0 support, bridge compatibility checks, legacy 1.5.1 path, and better bridge/menu bar status",
     "Lower bridge memory and network usage",
     "Stronger reconnects after sleep, relaunch, foregrounding, relay reconnects, and network changes",
     "Better Windows host and relay compatibility",
@@ -58,7 +58,7 @@ struct WhatsNewSheet: View {
             Text("What's New")
                 .font(AppFont.title2(weight: .bold))
 
-            Text("Remodex \(version)")
+            Text("Codex Anywhere \(version)")
                 .font(AppFont.mono(.subheadline))
                 .foregroundStyle(.secondary)
 

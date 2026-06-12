@@ -22,7 +22,7 @@ private enum TerminalConnectionHelpPlatform: String, CaseIterable, Identifiable 
             Please walk me through the whole setup, one step at a time:
             1. Help me find my Mac's local address and username.
             2. Turn on Remote Login (SSH) on this Mac.
-            3. Create a dedicated SSH key pair for Remodex and add the public key to this Mac.
+            3. Create a dedicated SSH key pair for Codex Anywhere and add the public key to this Mac.
             4. Tell me exactly what to enter in Remodex: connection string (user@host), nickname, private key, and port.
 
             Keep it beginner-friendly. Tell me exactly what to click or type, and ask me one question at a time if you need more info.
@@ -34,7 +34,7 @@ private enum TerminalConnectionHelpPlatform: String, CaseIterable, Identifiable 
             Please walk me through the whole setup, one step at a time:
             1. Help me find my Windows PC's local IP address and username.
             2. Install and enable the OpenSSH Server on this Windows machine.
-            3. Create a dedicated SSH key pair for Remodex and add the public key to this PC.
+            3. Create a dedicated SSH key pair for Codex Anywhere and add the public key to this PC.
             4. Tell me exactly what to enter in Remodex: connection string (user@host), nickname, private key, and port.
 
             Keep it beginner-friendly. Tell me exactly what to click or type, and ask me one question at a time if you need more info.
@@ -65,7 +65,7 @@ struct TerminalConnectionHelpSheet: View {
         NavigationStack {
             ScrollView {
                 VStack(alignment: .leading, spacing: 14) {
-                    Text("SSH is the secure tunnel Remodex uses to reach your Mac or PC. You need an address, a username, SSH enabled, and a private key.")
+                    Text("SSH is the secure tunnel Codex Anywhere uses to reach your Mac or PC. You need an address, a username, SSH enabled, and a private key.")
                         .font(.system(size: 14))
                         .foregroundStyle(.secondary)
                         .fixedSize(horizontal: false, vertical: true)
@@ -122,7 +122,7 @@ private struct TerminalWindowsConnectionGuide: View {
                     .font(.system(size: 22, weight: .bold))
                     .foregroundStyle(.primary)
 
-                Text("Run these in an Administrator PowerShell on the Windows PC, then create a terminal profile in Remodex.")
+                Text("Run these in an Administrator PowerShell on the Windows PC, then create a terminal profile in Codex Anywhere.")
                     .font(.system(size: 15))
                     .foregroundStyle(.secondary)
                     .fixedSize(horizontal: false, vertical: true)
@@ -135,7 +135,7 @@ private struct TerminalWindowsConnectionGuide: View {
                 }
             }
 
-            Text("Recommended private-key format: OpenSSH Ed25519 with a passphrase, created by ssh-keygen above. Remodex also accepts encrypted PKCS#8 and encrypted legacy PEM keys; unencrypted keys work only if you explicitly enable that option on the profile. In Remodex, use the Windows username, PC IPv4 address, port 22, and the matching private key. Administrator accounts use C:\\ProgramData\\ssh\\administrators_authorized_keys instead.")
+            Text("Recommended private-key format: OpenSSH Ed25519 with a passphrase, created by ssh-keygen above. Codex Anywhere also accepts encrypted PKCS#8 and encrypted legacy PEM keys; unencrypted keys work only if you explicitly enable that option on the profile. In Codex Anywhere, use the Windows username, PC IPv4 address, port 22, and the matching private key. Administrator accounts use C:\\ProgramData\\ssh\\administrators_authorized_keys instead.")
                 .font(.system(size: 14))
                 .foregroundStyle(.secondary)
                 .fixedSize(horizontal: false, vertical: true)
@@ -329,15 +329,15 @@ private extension TerminalConnectionHelpStep {
                 ),
                 TerminalConnectionHelpStep(
                     number: 3,
-                    title: "Create a Remodex key",
+                    title: "Create a Codex Anywhere key",
                     icon: "key",
-                    body: "Open Terminal and create a dedicated SSH key for Remodex. The public half is allowed on the Mac; the private half is pasted into Remodex and should not be shared anywhere else."
+                    body: "Open Terminal and create a dedicated SSH key for Codex Anywhere. The public half is allowed on the Mac; the private half is pasted into Codex Anywhere and should not be shared anywhere else."
                 ),
                 TerminalConnectionHelpStep(
                     number: 4,
                     title: "Fill in the connection",
                     icon: "terminal",
-                    body: "In Remodex, enter the connection as user@address, give it a nickname, paste the private key, and leave the port as 22 unless you changed it."
+                    body: "In Codex Anywhere, enter the connection as user@address, give it a nickname, paste the private key, and leave the port as 22 unless you changed it."
                 ),
                 TerminalConnectionHelpStep(
                     number: 5,
@@ -384,7 +384,7 @@ private extension TerminalConnectionHelpStep {
                 ),
                 TerminalConnectionHelpStep(
                     number: 5,
-                    title: "Find the PC IP, then use it in Remodex",
+                    title: "Find the PC IP, then use it in Codex Anywhere",
                     icon: "checkmark.seal.fill",
                     body: "",
                     command: "ipconfig"

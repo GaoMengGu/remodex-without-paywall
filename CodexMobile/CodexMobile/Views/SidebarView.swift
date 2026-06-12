@@ -897,7 +897,7 @@ private struct SidebarPromptsModifier: ViewModifier {
                 Button("Remove from Phone", role: .destructive, action: confirmDeleteProjectGroup)
                 Button("Cancel", role: .cancel, action: cancelDeleteProjectGroup)
             } message: {
-                Text("Chats for this project will be deleted only from Remodex on this phone. Nothing is removed from your device or Codex observer.")
+                Text("Chats for this project will be deleted only from Codex Anywhere on this phone. Nothing is removed from your device or Codex observer.")
             }
             .alert(
                 "Remove \"\(threadDeleteTitle)\" from this phone?",
@@ -906,7 +906,7 @@ private struct SidebarPromptsModifier: ViewModifier {
                 Button("Remove from Phone", role: .destructive, action: confirmDeleteThread)
                 Button("Cancel", role: .cancel, action: cancelDeleteThread)
             } message: {
-                Text("This only removes the chat from Remodex on this phone. Nothing is removed from your device or Codex observer.")
+                Text("This only removes the chat from Codex Anywhere on this phone. Nothing is removed from your device or Codex observer.")
             }
             .alert("Action failed", isPresented: errorPresented) {
                 Button("OK", role: .cancel, action: dismissError)

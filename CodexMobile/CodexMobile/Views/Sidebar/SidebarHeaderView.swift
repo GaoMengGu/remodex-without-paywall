@@ -31,7 +31,7 @@ struct SidebarHeaderView: View {
         AdaptiveGlassContainer(spacing: 10) {
             HStack(spacing: 10) {
                 appLogo
-                Text("Remodex")
+                Text("Codex Anywhere")
                     .font(AppFont.title3(weight: .medium))
                     .foregroundStyle(.primary)
                     .lineLimit(1)

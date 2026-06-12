@@ -7,7 +7,7 @@
 import SwiftUI
 
 struct SidebarTitleBlock: View {
-    var title = "Remodex"
+    var title = "Codex Anywhere"
     let computerName: String?
     let isConnected: Bool
 

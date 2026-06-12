@@ -72,9 +72,9 @@ enum RemodexNativeSSHTerminalError: LocalizedError {
         case .unsupportedPrivateKeyAuthentication:
             return "This SSH server is not accepting private-key authentication for that user."
         case .unsupportedPasswordAuthentication:
-            return "This SSH server is asking for password authentication, but Remodex terminal currently uses a private key."
+            return "This SSH server is asking for password authentication, but Codex Anywhere terminal currently uses a private key."
         case .unsupportedHostBasedAuthentication:
-            return "This SSH server requires host-based authentication, which Remodex terminal does not support."
+            return "This SSH server requires host-based authentication, which Codex Anywhere terminal does not support."
         case .channelCreationFailed:
             return "SSH connected, but the terminal channel could not be opened. Check whether the Mac allows interactive login for this user."
         }

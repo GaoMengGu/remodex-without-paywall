@@ -348,11 +348,11 @@ final class RemodexDisplayIslandCoordinator {
 
     private func detail(for thread: CodexThread?) -> String {
         guard let cwd = thread?.cwd?.trimmingCharacters(in: .whitespacesAndNewlines), !cwd.isEmpty else {
-            return "Remodex"
+            return "Codex Anywhere"
         }
 
         let lastPathComponent = URL(fileURLWithPath: cwd).lastPathComponent
-        return lastPathComponent.isEmpty ? "Remodex" : lastPathComponent
+        return lastPathComponent.isEmpty ? "Codex Anywhere" : lastPathComponent
     }
 
     private func nextExpirationDate(now: Date) -> Date? {
@@ -450,7 +450,7 @@ final class RemodexDisplayIslandCoordinator {
         } else {
             do {
                 let activity = try Activity<RemodexDisplayIslandAttributes>.request(
-                    attributes: RemodexDisplayIslandAttributes(title: "Remodex"),
+                    attributes: RemodexDisplayIslandAttributes(title: "Codex Anywhere"),
                     content: content,
                     pushType: nil
                 )

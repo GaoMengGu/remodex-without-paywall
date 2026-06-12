@@ -19,7 +19,7 @@ struct SettingsAboutCard: View {
                 HapticFeedback.shared.triggerImpactFeedback(style: .light)
                 onShowHowItWorks()
             } label: {
-                SettingsLinkRow(title: "How Remodex Works") {
+                SettingsLinkRow(title: "How Codex Anywhere Works") {
                     RemodexIcon.image(systemName: "info.circle")
                 }
             }

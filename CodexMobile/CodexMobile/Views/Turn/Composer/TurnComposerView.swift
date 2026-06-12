@@ -289,7 +289,7 @@ struct TurnComposerView: View {
     }
 
     private var placeholderText: String {
-        isEmptyThread ? "Ask Remodex anything..." : "Ask for follow-up changes"
+        isEmptyThread ? "Ask Codex Anywhere anything..." : "Ask for follow-up changes"
     }
 
 }

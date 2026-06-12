@@ -187,10 +187,10 @@ private enum SidebarNewChatProjectPickerSheetPreviewData {
             sortDate: Date()
         ),
         SidebarProjectChoice(
-            id: "Remodex",
-            label: "Remodex",
+            id: "Codex Anywhere",
+            label: "Codex Anywhere",
             iconSystemName: "laptopcomputer",
-            projectPath: "/Users/demo/Developer/Remodex",
+            projectPath: "/Users/demo/Developer/CodexAnywhere",
             sortDate: Date()
         )
     ]

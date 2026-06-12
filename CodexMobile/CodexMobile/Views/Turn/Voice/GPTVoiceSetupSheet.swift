@@ -25,7 +25,7 @@ struct GPTVoiceSetupSheet: View {
                             Text("GPT voice uses OpenAI auth on your device")
                                 .font(AppFont.subheadline(weight: .semibold))
                                 .fixedSize(horizontal: false, vertical: true)
-                            Text("Remodex does not keep a separate GPT voice secret on the iPhone. It uses the ChatGPT session or OpenAI API key already active on your paired device.")
+                            Text("Codex Anywhere does not keep a separate GPT voice secret on the iPhone. It uses the ChatGPT session or OpenAI API key already active on your paired device.")
                                 .font(AppFont.caption())
                                 .foregroundStyle(.secondary)
                                 .fixedSize(horizontal: false, vertical: true)
@@ -37,12 +37,12 @@ struct GPTVoiceSetupSheet: View {
                         infoStep(
                             number: "1",
                             title: "You speak on the iPhone",
-                            detail: "Remodex records the voice clip locally on the phone when you hold to talk."
+                            detail: "Codex Anywhere records the voice clip locally on the phone when you hold to talk."
                         )
                         infoStep(
                             number: "2",
                             title: "The phone checks your paired device",
-                            detail: "Remodex asks the paired device bridge for the active ChatGPT session or OpenAI API key available there."
+                            detail: "Codex Anywhere asks the paired device bridge for the active ChatGPT session or OpenAI API key available there."
                         )
                         infoStep(
                             number: "3",
@@ -51,7 +51,7 @@ struct GPTVoiceSetupSheet: View {
                         )
                         infoStep(
                             number: "4",
-                            title: "The text comes back to Remodex",
+                            title: "The text comes back to Codex Anywhere",
                             detail: "The transcript returns to the app and gets dropped into your message composer."
                         )
                     }

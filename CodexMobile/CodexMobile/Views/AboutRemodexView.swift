@@ -33,7 +33,7 @@ struct AboutRemodexView: View {
             .padding(.bottom, 40)
         }
         .font(AppFont.body())
-        .navigationTitle("About Remodex")
+        .navigationTitle("About Codex Anywhere")
         .navigationBarTitleDisplayMode(.inline)
     }
 
@@ -41,7 +41,7 @@ struct AboutRemodexView: View {
 
     @ViewBuilder private var header: some View {
         VStack(alignment: .leading, spacing: 14) {
-            Text("Remodex")
+            Text("Codex Anywhere")
                 .font(AppFont.headline(weight: .bold))
                 .foregroundStyle(.primary)
 
@@ -88,7 +88,7 @@ struct AboutRemodexView: View {
             sectionTitle("Architecture")
 
             VStack(spacing: 0) {
-                diagramStep(from: "Remodex iOS", to: "Bridge (Device)", via: "WebSocket")
+                diagramStep(from: "Codex Anywhere iOS", to: "Bridge (Device)", via: "WebSocket")
                 diagramStep(from: "Bridge (Device)", to: "codex app-server", via: "JSON-RPC")
                 diagramStep(from: "codex app-server", to: "~/.codex/sessions", via: "JSONL rollout", isLast: true)
             }
@@ -274,7 +274,7 @@ struct AboutRemodexView: View {
             calloutCard(
                 icon: "macbook.and.iphone",
                 color: .blue,
-                text: "The desktop app doesn't live-reload external writes. Use the desktop app handoff button in Remodex to continue the current thread on your device."
+                text: "The desktop app doesn't live-reload external writes. Use the desktop app handoff button in Codex Anywhere to continue the current thread on your device."
             )
         }
     }

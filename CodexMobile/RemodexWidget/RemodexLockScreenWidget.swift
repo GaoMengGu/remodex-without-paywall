@@ -70,7 +70,7 @@ struct RemodexLockScreenWidgetView: View {
                 .widgetAccentable()
 
             VStack(alignment: .leading, spacing: 0) {
-                Text("Remodex")
+                Text("Codex Anywhere")
                     .font(.headline)
                     .lineLimit(1)
                 Text("Open Codex chat")
@@ -87,19 +87,19 @@ struct RemodexLockScreenWidgetView: View {
     private var inlineBody: some View {
         // Inline accessories collapse to a single line next to the clock; the
         // image is auto-tinted by the system.
-        Label("Remodex", image: "remodex_symbol_medium")
+        Label("Codex Anywhere", image: "remodex_symbol_medium")
     }
 }
 
 struct RemodexLockScreenWidget: Widget {
-    static let kind = "com.emanueledipietro.Remodex.RemodexWidget.LockScreen"
+    static let kind = "com.hamkris.CodexAnywhere.Widget.LockScreen"
 
     var body: some WidgetConfiguration {
         StaticConfiguration(kind: Self.kind, provider: RemodexLockScreenProvider()) { entry in
             RemodexLockScreenWidgetView(entry: entry)
         }
-        .configurationDisplayName("Remodex")
-        .description("Quick access to Remodex from your Lock Screen.")
+        .configurationDisplayName("Codex Anywhere")
+        .description("Quick access to Codex Anywhere from your Lock Screen.")
         .supportedFamilies([.accessoryCircular, .accessoryRectangular, .accessoryInline])
     }
 }
@@ -169,7 +169,7 @@ private struct RemodexDisplayIslandLockScreenView: View {
                     .frame(width: 32, height: 32)
 
                 VStack(alignment: .leading, spacing: 2) {
-                    Text("Remodex")
+                    Text("Codex Anywhere")
                         .font(.headline.weight(.semibold))
                     Text(headerSubtitle)
                         .font(.caption)

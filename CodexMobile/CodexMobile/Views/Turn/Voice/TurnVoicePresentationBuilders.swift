@@ -68,7 +68,7 @@ enum TurnVoiceRecoveryPresentationBuilder {
             return VoiceRecoveryPresentation(
                 snapshot: snapshot(
                     summary: "Reconnect to your device to use voice mode.",
-                    detail: "Keep the Remodex bridge running on your paired device, then try the microphone again.",
+                    detail: "Keep the Codex Anywhere bridge running on your paired device, then try the microphone again.",
                     status: .interrupted,
                     trailingStyle: .action("Reconnect")
                 ),
@@ -78,7 +78,7 @@ enum TurnVoiceRecoveryPresentationBuilder {
             return VoiceRecoveryPresentation(
                 snapshot: snapshot(
                     summary: "This bridge session does not support voice mode yet.",
-                    detail: "Restart Remodex on your device, then reconnect this iPhone. If it still happens, update Remodex on your device and pair again.",
+                    detail: "Restart Codex Anywhere on your device, then reconnect this iPhone. If it still happens, update Codex Anywhere on your device and pair again.",
                     status: .actionRequired,
                     trailingStyle: .action("Reconnect")
                 ),
@@ -125,13 +125,13 @@ enum TurnVoiceRecoveryPresentationBuilder {
         case .chatGPTRequired:
             return setupHelpPresentation(
                 summary: "Voice mode needs the updated bridge auth path.",
-                detail: "Restart or update Remodex on the paired device. Current voice mode can use ChatGPT or an OpenAI API key without sending the token to your phone."
+                detail: "Restart or update Codex Anywhere on the paired device. Current voice mode can use ChatGPT or an OpenAI API key without sending the token to your phone."
             )
         case .microphonePermissionRequired:
             return VoiceRecoveryPresentation(
                 snapshot: snapshot(
-                    summary: "Microphone access is off for Remodex.",
-                    detail: "Open iPhone Settings, allow Microphone for Remodex, then try recording again.",
+                    summary: "Microphone access is off for Codex Anywhere.",
+                    detail: "Open iPhone Settings, allow Microphone for Codex Anywhere, then try recording again.",
                     status: .actionRequired,
                     trailingStyle: .action("Open Settings")
                 ),
@@ -150,7 +150,7 @@ enum TurnVoiceRecoveryPresentationBuilder {
         case .recorderUnavailable:
             return VoiceRecoveryPresentation(
                 snapshot: snapshot(
-                    summary: "Remodex could not start the recorder.",
+                    summary: "Codex Anywhere could not start the recorder.",
                     detail: "Close other audio-heavy apps, then try voice mode again.",
                     status: .actionRequired,
                     trailingStyle: .none
