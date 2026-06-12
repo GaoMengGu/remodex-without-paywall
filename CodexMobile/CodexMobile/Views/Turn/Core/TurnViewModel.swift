@@ -1403,7 +1403,6 @@ final class TurnViewModel {
             ? initialQueuedDraft.map { preAppendQueuedDraftMessageIfNeeded($0, codex: codex, threadID: threadID) }
             : initialQueuedDraft
 
-        subscriptions?.consumeFreeSendAttemptIfNeeded()
         isSending = true
         isPlanModeArmed = false
         shouldAnchorToAssistantResponse = true
@@ -1460,7 +1459,6 @@ final class TurnViewModel {
             return false
         }
 
-        subscriptions?.consumeFreeSendAttemptIfNeeded()
         isSending = true
         isPlanModeArmed = false
         shouldAnchorToAssistantResponse = true
@@ -1525,7 +1523,7 @@ final class TurnViewModel {
     }
 
     // Shared validation + payload assembly used by `sendTurn` and `sendNewThread`
-    // so the empty/connected/blocking/review/subscription guards stay in one place.
+    // so the empty/connected/blocking/review guards stay in one place.
     private func buildValidatedPendingSend(
         codex: CodexService,
         subscriptions: SubscriptionService?
@@ -1549,11 +1547,6 @@ final class TurnViewModel {
 
         if reviewSelection != nil, hasComposerContentConflictingWithReview {
             codex.lastErrorMessage = "Clear text, files, skills, and images before starting a code review."
-            return nil
-        }
-
-        if let subscriptions, !subscriptions.hasAppAccess {
-            codex.lastErrorMessage = "Your 5 free messages are over. Unlock Remodex Pro to keep chatting."
             return nil
         }
 
